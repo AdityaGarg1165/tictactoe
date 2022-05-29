@@ -1,5 +1,5 @@
 let turn = "X"
-
+let disabled = false
 let color = "rgb(182, 68, 22)"
 
 
@@ -27,26 +27,35 @@ function checkWin(){
     })
 }
 let cells = document.getElementsByClassName('cell')
-console.log(getColor())
+
+function reset(){
+    document.location.href = "/"
+}
+
 Array.from(cells).forEach((element)=>{
     
+    
     element.addEventListener("click",()=>{
-        if(element.innerText === ''){
-            const tile = document.createElement("div")
-            tile.classList.add("tile")
-            tile.innerText = turn
-            tile.style.backgroundColor = getColor()
-            color = getColor()
-            element.append(tile)
-            element.classList.add(turn)
-            win = checkWin()
-            if(win){
-                console.log(turn,"wins")
-                document.querySelector(".h1").innerHTML = `${turn} Wins!`
+            if(disabled !== true){
+            if(element.innerText === ''){
+                const tile = document.createElement("div")
+                tile.classList.add("tile")
+                tile.innerText = turn
+                tile.style.backgroundColor = getColor()
+                color = getColor()
+                element.append(tile)
+                element.classList.add(turn)
+                win = checkWin()
+                if(win){
+                    console.log(turn,"wins")
+                    document.querySelector('.board').classList.add('disabled')
+                    disabled = true
+                    document.querySelector(".h1").innerHTML = `${turn} Wins!`
+                }
             }
+            turn = changeTurn()
         }
-        turn = changeTurn()
-    })
+        })
 
 })
 
