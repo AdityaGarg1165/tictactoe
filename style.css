@@ -1,0 +1,40 @@
+.board{
+    width: 26vw;
+    margin-left: 34vw;
+    margin-top: 9vw;
+    height: 26vw;
+    background-color: #CCC;
+    border-radius: .5vh;
+    display: grid;
+    grid-template-columns: repeat(3,.1vw) ;
+    grid-template-rows: repeat(3,.1vw);
+    row-gap: 122px;
+    padding-left: 2vh;
+    padding-top: 2vh;
+    column-gap: 122px;
+}
+h1{
+    font-family: sans-serif;
+    margin-left: 42.5vw;
+    margin-top: 8vh;
+    color: rgb(78, 219, 78);
+}
+.tile{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 6vh;
+    color: white;
+    background-color: rgb(111, 140, 236);
+    height: 6vw;
+    border-radius: 1vh;
+    padding-top: 4vh;
+    font-family: sans-serif;
+}
+.cell{
+    width: 8vw;
+    cursor: pointer;
+    height: 8vw;
+    border-radius: 1vh;
+    background-color: gray;
+}
