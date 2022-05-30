@@ -29,7 +29,7 @@ function checkWin(){
 let cells = document.getElementsByClassName('cell')
 
 function reset(){
-    document.location.href = "/"
+    document.location.href = "/tictactoe"
 }
 
 Array.from(cells).forEach((element)=>{
